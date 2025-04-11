@@ -12,6 +12,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Textarea } from "@/components/ui/textarea"
+import { FloatingEmergencyButton } from "@/components/floating-emergency-button"
 
 export default function ContactPage() {
   const [formState, setFormState] = useState({
@@ -338,6 +339,7 @@ export default function ContactPage() {
           </div>
         </div>
       </footer>
-    </div>
-  )
-}
+
+      {/* Floating Emergency Button */}
+      <FloatingEmergencyButton />
+    </div>\

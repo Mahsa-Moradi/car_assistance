@@ -166,7 +166,7 @@ export default function DashboardPage() {
                 </div>
               </CardContent>
               <CardFooter>
-                <Link href="/dashboard/request-help">
+                <Link href="/dashboard/active-request">
                   <Button className="w-full">Track Request</Button>
                 </Link>
               </CardFooter>

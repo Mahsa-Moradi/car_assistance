@@ -2,21 +2,33 @@
 
 import type React from "react"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Link from "next/link"
-import { useRouter } from "next/navigation"
+import { useRouter, useSearchParams } from "next/navigation"
 import { Car, Loader2 } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import { useToast } from "@/components/ui/use-toast"
 
 export default function LoginPage() {
   const router = useRouter()
+  const searchParams = useSearchParams()
+  const { toast } = useToast()
   const [isLoading, setIsLoading] = useState(false)
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
+  const [redirectMessage, setRedirectMessage] = useState<string | null>(null)
+
+  useEffect(() => {
+    // Check if there's a redirect parameter
+    const redirect = searchParams.get("redirect")
+    if (redirect === "welcome-discount") {
+      setRedirectMessage("Log in to claim your welcome discount!")
+    }
+  }, [searchParams])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -25,9 +37,26 @@ export default function LoginPage() {
     // Simulate login - in a real app, this would call an API
     setTimeout(() => {
       setIsLoading(false)
-      // Redirect to dashboard based on role
-      // For demo purposes, we'll redirect to car owner dashboard
-      router.push("/dashboard")
+
+      // Set user as logged in
+      localStorage.setItem("userLoggedIn", "true")
+
+      // Show success toast
+      toast({
+        title: "Login successful",
+        description: "Welcome back to RoadAssist!",
+      })
+
+      // Check if there's a redirect parameter
+      const redirect = searchParams.get("redirect")
+      if (redirect === "welcome-discount") {
+        // Redirect to homepage with a flag to show the welcome popup again
+        sessionStorage.removeItem("hasShownWelcomePopup")
+        router.push("/")
+      } else {
+        // Redirect to dashboard
+        router.push("/dashboard")
+      }
     }, 1500)
   }
 
@@ -43,6 +72,11 @@ export default function LoginPage() {
           <CardDescription className="text-center">
             Enter your email and password to access your account
           </CardDescription>
+          {redirectMessage && (
+            <div className="mt-2 p-2 bg-cta-yellow/20 border border-cta-yellow rounded-md text-text-dark text-sm">
+              {redirectMessage}
+            </div>
+          )}
         </CardHeader>
         <form onSubmit={handleSubmit}>
           <CardContent className="space-y-4">

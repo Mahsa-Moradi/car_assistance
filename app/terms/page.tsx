@@ -2,6 +2,7 @@ import Link from "next/link"
 import { Car } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
+import { FloatingEmergencyButton } from "@/components/floating-emergency-button"
 
 export default function TermsPage() {
   return (
@@ -196,6 +197,9 @@ export default function TermsPage() {
           </div>
         </div>
       </footer>
+
+      {/* Floating Emergency Button */}
+      <FloatingEmergencyButton />
     </div>
   )
 }

@@ -16,6 +16,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
+import { FloatingEmergencyButton } from "@/components/floating-emergency-button"
 
 export default function DashboardLayout({
   children,
@@ -67,6 +68,9 @@ export default function DashboardLayout({
           </header>
           <main className="flex-1 p-6">{children}</main>
         </div>
+
+        {/* Floating Emergency Button */}
+        <FloatingEmergencyButton />
       </div>
     </SidebarProvider>
   )

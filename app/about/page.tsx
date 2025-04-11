@@ -4,6 +4,7 @@ import { Car, CheckCircle, Clock, MapPin, Shield, Star, Users, Wrench } from "lu
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
+import { FloatingEmergencyButton } from "@/components/floating-emergency-button"
 
 export default function AboutPage() {
   return (
@@ -277,6 +278,9 @@ export default function AboutPage() {
           </div>
         </div>
       </footer>
+
+      {/* Floating Emergency Button */}
+      <FloatingEmergencyButton />
     </div>
   )
 }

@@ -14,7 +14,7 @@ const slides = [
     title: "Roadside Assistance Made Simple",
     description:
       "Connect with nearby mechanics and tow trucks instantly. Get help when you need it most, with transparent pricing and reliable service.",
-    image: "/What Not to Say at the Scene of a Car Accident.jpeg",
+    image: "/placeholder.svg?height=550&width=550",
     buttonText: "Get Started",
     buttonLink: "/login",
   },
@@ -23,7 +23,7 @@ const slides = [
     title: "24/7 Emergency Support",
     description:
       "Our network of service providers is available around the clock. No matter when you need help, we've got you covered.",
-    image: "/It’s Worth Spending More on These 14 Purchases.jpeg",
+    image: "/placeholder.svg?height=550&width=550",
     buttonText: "Learn More",
     buttonLink: "/about",
   },
@@ -32,7 +32,7 @@ const slides = [
     title: "Join Our Provider Network",
     description:
       "Are you a mechanic or tow truck operator? Join our platform to connect with customers and grow your business.",
-    image: "/4 Simple Ways to Prevent Parking Lot Accidents - Cars Fellow.jpeg",
+    image: "/placeholder.svg?height=550&width=550",
     buttonText: "Sign Up",
     buttonLink: "/signup",
   },
