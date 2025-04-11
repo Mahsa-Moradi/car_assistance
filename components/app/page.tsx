@@ -4,6 +4,10 @@ import { Car, MapPin, Star, Wrench } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { HeroSlider } from "@/components/hero-slider"
+import { LiveChat } from "@/components/live-chat"
+import { EmergencyContactButton } from "@/components/emergency-contact-button"
+import { HelpRequestForm } from "@/components/help-request-form"
+import { SpecialOffers } from "@/components/special-offers"
 
 export default function Home() {
   return (
@@ -50,6 +54,12 @@ export default function Home() {
             <HeroSlider />
           </div>
         </section>
+
+        {/* Help Request Form */}
+        <HelpRequestForm />
+
+        {/* Special Offers Section */}
+        <SpecialOffers />
 
         <section id="features" className="w-full py-12 md:py-24 lg:py-32 bg-button-blue/10">
           <div className="container px-4 md:px-6 max-w-[70%] mx-auto">
@@ -324,6 +334,12 @@ export default function Home() {
           </div>
         </div>
       </footer>
+
+      {/* Live Chat Component */}
+      <LiveChat />
+
+      {/* Emergency Contact Button */}
+      <EmergencyContactButton />
     </div>
   )
 }
